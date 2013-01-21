@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style type="text/css">
+        body {
+            background-color: #000000;
+            color: #ffffff;
+        }
+        div.middle {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+        }
+        table {
+            display: inline-block;
+            border: 1px solid #ffffff;
+            padding: 10px;
+            background-color: #800000;
+        }
+    </style>
+</head>
+<body>
+    <div class="middle">
+        <form method="POST" action="">
+            <h2>Login</h2>
+            <table>
+                <tr>
+                    <td>user&nbsp;&nbsp;</td>
+                    <td><input type="text" name="username" /></td>
+                </tr>
+                <tr>
+                    <td>pass&nbsp;&nbsp;</td>
+                    <td><input type="text" name="password" /></td>
+                </tr>
+                <tr>
+                    <td colspan="2" style="text-align: right;"><input type="submit" name="submit" value="login"/></td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</body>
+</html>

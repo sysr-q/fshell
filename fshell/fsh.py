@@ -46,7 +46,10 @@ def check_sql():
     if os.path.isfile(settings.database):
         return
     with open('schema.sql', 'rb') as f:
-        pysql()._wrap.cursor.executescript(f.read())
+        p = pysql()
+        p._wrap \
+        .cursor \
+        .executescript(f.read())
 
 if __name__ == "__main__":
     main()

