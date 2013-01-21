@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style type="text/css">
+        body {
+            background-color: #000000;
+            color: #FFFFFF;
+        }
+
+        h1, h2, h3 {
+            margin: 0 auto;
+            margin-bottom: 5px;
+            text-align: center;
+        }
+
+        h3:before {
+            content: ":: ";
+        }
+        h3:after {
+            content: " ::";
+        }
+
+        div.part {
+            background-color: #333333;
+            padding: 10px;
+            border: 1px solid #FFFFFF;
+            margin-bottom: 10px;
+        }
+        div.part hr {
+            width: 100%;
+            display: block;
+        }
+
+        div.part-left {
+            width: 50%;
+            display: inline-block;
+            border-right: 1px solid #FFFFFF;
+            text-align: center;
+        }
+        div.part-right {
+            width: 49%;
+            display: inline;
+            float: right;
+            text-align: center;
+        }
+
+        table.colon-f {
+
+        }
+        table.colon-f tr td:first-child {
+            background-color: #000000;
+            padding-left: 4px;
+            padding-right: 4px;
+        }
+        table.colon-f tr td:last-child {
+            padding-left: 6px;
+            font-weight: 100;
+        }
+
+        .c-green {
+            color: #009000;
+        }
+        .c-red {
+            color: #FF0000;
+        }
+
+        .align-left {
+            text-align: left;
+            display: inline-block;
+        }
+        .align-center {
+            text-align: center;
+            display: inline-block;
+        }
+        .align-right {
+            text-align: right;
+            display: inline-block;
+        }
+
+        input, select {
+            background-color: #800000;
+            color: #FFFFFF;
+        }
+
+        .xdp {
+            display: block;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+        .xdp:before {
+            content: ":: ";
+        }
+        .xdp:after {
+            content: " ::";
+        }
+
+        .tiny {
+            font-size: 70%;
+        }
+    </style>
+</head>
+<body>
+    <div class="part">
+        <h1>!&nbsp;c99pRo shell&nbsp;!</h1>
+        <hr />
+        <table class="colon-f">
+            <tr>
+                <td>$ php --version</td>
+                <td>{{ s_php_ver }}</td>
+            </tr>
+            <tr>
+                <td>$ uname -a</td>
+                <td>{{ s_uname_a }}</td>
+            </tr>
+            <tr>
+                <td>$ whoami</td>
+                <td>
+                    {% if v_rooted %}
+                        <span class="c-red">root</span>
+                    {% else %}
+                        {{ s_whoami }}
+                    {% endif %}
+                </td>
+            </tr>
+            <tr>
+                <td>safe-mode</td>
+                <td><span class="c-green">OFF (not secure)</span></td>
+            </tr>
+            <tr>
+                <td>script</td>
+                <td>{{ v_script }}</td>
+            </tr>
+            <tr>
+                <td>shell ver</td>
+                <td>{{ v_shellver }}</td>
+            </tr>
+            <tr>
+                <td>shell perms</td>
+                <td>{{ s_perms }}</td>
+            </tr>
+            <tr>
+                <td>rooted</td>
+                <td>
+                    {% if v_rooted %}
+                        <span class="c-green">yes</span>
+                    {% else %}
+                        <span class="c-red">no</span>
+                    {% endif %}
+                </td>
+        </table>
+        <hr />
+        <span class="align-center">pWn3d by: <span class="c-red">{{ v_hacker }}</span></span>
+    </div>
+
+    <div class="part">
+        <h3>command execute</h3>
+        <div class="part-left">
+            <form method="POST" action="">
+                <input type="text" placeholder="cmd-to-run" />
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <div class="part-right">
+            <form method="POST" action="">
+                <select>
+                    <option value="none">:: premade commands ::</option>
+                    <option>show open ports</option>
+                    <option>hose system boot</option>
+                    <option>show /etc/passwd</option>
+                </select>
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+    </div>
+
+    <div class="part">
+        <h3>zero days</h3>
+        <div class="part-left">
+            <form method="POST" action="">
+                <span class="xdp">local root</span>
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <div class="part-right">
+            <form method="POST" action="">
+                <span class="xdp">ghost shell.php</span>
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <hr />
+        <div class="part-left">
+            <form method="POST" action="">
+                <span class="xdp">sqlicate</span>
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <div class="part-right">
+            <form method="POST" action="">
+                <b>-- placeholder --</b>
+            </form>
+        </div>
+    </div>
+
+    <div class="part">
+        <h3>misc utils</h3>
+        <div class="part-left">
+            <form method="POST" action="">
+                <span class="xdp">search</span>
+                <input type="text" value="^(.*)" />
+                <label>
+                    <input type="checkbox" checked />
+                    regex
+                </label>
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <div class="part-right">
+            <form method="POST" action="">
+                <span class="xdp">upload</span>
+                <input type="file" />
+                <input type="submit" value="upload" />
+            </form>
+        </div>
+        <hr />
+        <div class="part-left">
+            <form method="POST" action="">
+                <span class="xdp">mkdir</span>
+                <input type="text" placeholder="/some/dir" />
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <div class="part-right">
+            <form method="POST" action="">
+                <span class="xdp">mkfile</span>
+                <input type="text" placeholder="/some/file.txt" />
+                <input type="submit" value="execute" />
+            </form>
+        </div>
+        <hr />
+        <div class="part-left">
+            <form method="POST" action="">
+                <span class="xdp">dump mysql</span>
+                <table class="colon-f align-center">
+                    <tr>
+                        <td>DB host</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>DB user</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>DB pass</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td>DB name</td>
+                        <td><input type="text" /></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2" style="text-align: right;"><input type="submit" value="dump" /></td>
+                </table>
+            </form>
+        </div>
+        <div class="part-right">
+            <b>-- placeholder --</b>
+        </div>
+    </div>
+
+    <div class="part tiny" style="text-align: center;">
+        --[ c99pRo shell {{ v_shellver }} - <u>cracked by {unnamed}</u> ]--
+    </div>
+</body>
+</html>

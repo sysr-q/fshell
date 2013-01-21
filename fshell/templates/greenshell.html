@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{ title }}</title>
+    <style type="text/css">
+        body {
+            /* Black on green */
+            background-color: #000000;
+            color: #00FF00;
+            text-align: center;
+        }
+        label input {
+            margin-bottom: 10px;
+        }
+        input {
+            background-color: #00FF00;
+        }
+    </style>
+</head>
+<body>
+    <h1>UDP Flood</h1>
+    <form method="POST" action="">
+        <label>
+            Host:<br />
+            <input type="text" />
+        </label>
+        <br />
+        <label>
+            Port:<br />
+            <input type="text" />
+        </label>
+        <br />
+        <label>
+            Length (seconds):<br />
+            <input type="text" />
+        </label>
+        <br />
+        <input type="submit" value="Go" />
+    </form>
+    <p>
+        pWn3d by: <span style="color: #FF0000;">{{ v_hacker }}</span>
+    </p>
+</body>
+</html>
