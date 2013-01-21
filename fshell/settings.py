@@ -4,7 +4,7 @@ host = '127.0.0.1'
 port = 31337 # ELITE, geddit?
 
 # The absolute path to the database we're storing details in.
-database = /path/to/fshell.db"
+database = "/path/to/fshell.db"
 
 # Where you want to bind our "shell" to.
 # e.g.: "/shell.php", "/the/gibson/shell.php", "magic-hacks.phtml"
