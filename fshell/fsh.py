@@ -1,15 +1,12 @@
 #!/usr/bin/env python
 # -*- coding: utf-8 -*-
 
-from flask import Flask, render_template, session, abort, request, g
-from flask import redirect, url_for, flash, make_response, jsonify, send_file
-
-import pysqlw
-
 import time
 
-import settings
+from flask import Flask, render_template, request
+import pysqlw
 
+import settings
 
 app = Flask(__name__)
 
@@ -23,11 +20,11 @@ def shell():
         "ip": request.remote_addr,
         "time": int(time.time()),
 
-        "agent": ua.string if not ua.string == None else "",
-        "agent_platform": ua.platform if not ua.platform == None else "",
-        "agent_browser": ua.browser if not ua.browser == None else "",
-        "agent_version": ua.version if not ua.version == None else "",
-        "agent_language": ua.language if not ua.language == None else ""
+        "agent": "" if not ua.string else ua.string,
+        "agent_platform": "" if not ua.platform else ua.platform,
+        "agent_browser": "" if not ua.browser else ua.browser,
+        "agent_version": "" if not ua.version else ua.version,
+        "agent_language": "" if not ua.language else ua.language
     }
     if not pysql().insert('fshell', data):
         print 'Unable to insert data to fshell database.'
@@ -45,11 +42,10 @@ def check_sql():
     import os
     if os.path.isfile(settings.database):
         return
-    with open('schema.sql', 'rb') as f:
-        p = pysql()
-        p._wrap \
+    with pysql() as p:
+        p.wrapper \
         .cursor \
-        .executescript(f.read())
+        .executescript(settings.schema)
 
 if __name__ == "__main__":
     main()
